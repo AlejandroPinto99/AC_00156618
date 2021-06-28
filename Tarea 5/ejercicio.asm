@@ -62,3 +62,18 @@ org 100h
 
     nombre DB 'Alejandro Enrique Pinto Santos'
 
+call escribir
+
+escribir:
+        mov     AH, 13h
+        mov     AL, 01h
+        mov     BH, 00h
+        mov     BL, 0000_1111b   
+        mov     CX, SI
+        mov     DL, 20d
+        mov     DH, 10d
+        push    CS
+        pop     ES 
+        mov     BP, 300h
+        int     10h
+        ret
